@@ -25,8 +25,24 @@ View(vehiculos)
 # Cada que trabajemos con alguna geometria tenemos que agregar la caracteristica de mapping
 
 ggplot(data = vehiculos) +
-  geom_point(mapping = aes(x = displ, y = hwy))
+  geom_point(mapping = aes(x = displ, 
+                           y = hwy
+                           )
+             )
 
 # Plantilla para hacer una representación gráfica con ggplot
 #ggplot(data = <DATA_FRAME>) +
 #  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+
+?ggplot
+
+
+#Ejemplos de la documentacion de ggplot
+df <- data.frame(
+  gp = factor(rep(letters[1:3], each = 10)),
+  y = rnorm(30)
+)
+
+ds <- do.call(rbind, lapply(split(df, df$gp), function(d) {
+  data.frame(mean = mean(d$y), sd = sd(d$y), gp = d$gp)
+}))

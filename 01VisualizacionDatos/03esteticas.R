@@ -6,6 +6,11 @@ ggplot(data = vehiculos) +
 
 #Agregamos el tamaño a la geometría y estará definida por el número de cilindros
 ggplot(data = vehiculos) +
-  geom_point(mapping = aes(x = displ, y = hwy, color = class, size = cyl))
+  geom_point(mapping = aes(x = displ, 
+                           y = hwy, 
+                           color = class, 
+                           size = cyl
+                           )
+             )
 
 ?mpg
