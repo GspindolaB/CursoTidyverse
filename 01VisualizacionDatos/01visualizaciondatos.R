@@ -46,3 +46,7 @@ df <- data.frame(
 ds <- do.call(rbind, lapply(split(df, df$gp), function(d) {
   data.frame(mean = mean(d$y), sd = sd(d$y), gp = d$gp)
 }))
+
+ggplot(df, aes(gp, y)) +
+  geom_point() +
+  geom_point(data = ds, aes(y = mean), colour = 'red', size = 3)
