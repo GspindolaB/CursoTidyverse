@@ -37,4 +37,15 @@ ggplot(data = vehiculos, mapping = aes(x = displ, y = cty)) +
   geom_point(mapping = aes(color = class)) +
   geom_smooth(data = filter(vehiculos, class =="suv"), se = F) #El parametro se elimina el intervalo de confianza
 
-              
+ggplot(data = mpg, mapping = aes(x=displ, y = hwy)) + 
+  geom_point(mapping = aes(color = drv, shape = drv)) + 
+  geom_smooth(mapping = aes(linetype = drv), se = F)
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x=displ, y = hwy)) + 
+  geom_smooth(mapping = aes(x=displ, y = hwy))
+
+?geom_point
+
+ggplot(data = vehiculos) + 
+  geom_point(mapping = aes(x = displ, y = hwy, fill = drv), shape = 23, size = 5, color = "white", stroke = 3)
