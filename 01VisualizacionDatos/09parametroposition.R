@@ -41,3 +41,12 @@ ggplot(data = diamantes, mapping= aes(x = cut, fill = clarity)) +
 #position = "jitter"
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
   geom_point(position = "jitter")
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_jitter()
+
+?position_stack
+?position_identity
+?position_fill
+?position_dodge
+?position_jitter
