@@ -47,3 +47,34 @@ ggplot(data = diamantes) +
                fun.ymax = max,
                fun.y = median
                )
+
+### TAREA ###
+
+#¿Qué hace el parámetro geom_col? ¿En qué se diferencia de geom_bar?
+
+ggplot(data = diamantes) + 
+  geom_col(mapping = aes(x = cut, y = carat))
+
+?geom_col
+
+# To show (e.g.) means, you need geom_col()
+df <- data.frame(trt = c("a", "b", "c"), outcome = c(2.3, 1.9, 3.2))
+ggplot(df, aes(trt, outcome)) +
+  geom_col()
+# But geom_point() displays exactly the same information and doesn't
+# require the y-axis to touch zero.
+ggplot(df, aes(trt, outcome)) +
+  geom_point()
+
+?stat_smooth
+
+vehiculos <- mpg
+
+ggplot(data = vehiculos) +
+  stat_smooth(mapping = aes(x = displ, y = hwy))
+
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = ..prop.., group = 1))
+
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = color, y = ..prop.., group = 1))
