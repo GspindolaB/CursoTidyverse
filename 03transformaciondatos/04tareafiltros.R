@@ -30,3 +30,35 @@ filter(starwars, between(height, 106, 150))
 
 View(filter(flights, between(sched_dep_time, 106, 699) ))
 
+# 9.- ¿Cuantos vuelos tienen un valor desconocido de dep_time?
+View(filter(flights, is.na(dep_time)))
+
+# 10.- ¿Qué variables del dataset contienen valores desconocidos? ¿Qué representan esas filas donde faltan los datos?
+sin.datos <- tibble( filter(flights, is.na(year)))
+sin.datos <- tibble( filter(flights, is.na(month)))
+sin.datos <- tibble( filter(flights, is.na(day)))
+sin.datos <- tibble( filter(flights, is.na(dep_time))) #NA 8255
+sin.datos <- tibble( filter(flights, is.na(sched_dep_time)))
+sin.datos <- tibble( filter(flights, is.na(dep_delay))) #NA 8255
+sin.datos <- tibble( filter(flights, is.na(arr_time))) #NA 8713
+sin.datos <- tibble( filter(flights, is.na(sched_arr_time)))
+sin.datos <- tibble( filter(flights, is.na(arr_delay))) #NA 9430
+sin.datos <- tibble( filter(flights, is.na(carrier))) 
+sin.datos <- tibble( filter(flights, is.na(flight)))
+sin.datos <- tibble( filter(flights, is.na(tailnum))) #NA 2512
+sin.datos <- tibble( filter(flights, is.na(origin)))
+sin.datos <- tibble( filter(flights, is.na(dest)))
+sin.datos <- tibble( filter(flights, is.na(air_time))) #NA 9430
+sin.datos <- tibble( filter(flights, is.na(distance)))
+sin.datos <- tibble( filter(flights, is.na(hour)))
+sin.datos <- tibble( filter(flights, is.na(minute)))
+sin.datos <- tibble( filter(flights, is.na(time_hour)))
+
+# 11.- Ahora vas a sorprenderte con la magia oscura... Contesta que dan las siguientes condiciones booleanas
+
+NA^0 # Cualquier numero elevado a la 0 potencia da cómo resultado 1
+NA|TRUE # Cuándo se utilizan operadores logicos no devuelve NA
+FALSE&NA # Cuándo se utilizan operadores logicos no devuelve NA
+
+NA * 0
+
