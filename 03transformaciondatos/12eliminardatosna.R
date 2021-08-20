@@ -8,10 +8,10 @@ vuelos %>%
               sd = sd(dep_delay, na.rm = T),
               count = n())
 
-mo_cancelados <- vuelos %>%
+no_cancelados <- vuelos %>%
   filter(!is.na(dep_delay), !is.na(arr_delay))
 
-mo_cancelados %>%
+no_cancelados %>%
   group_by(year,month,day) %>%
   summarise(mean = mean(dep_delay, na.rm = T),
             median = median(dep_delay, na.rm = T),
