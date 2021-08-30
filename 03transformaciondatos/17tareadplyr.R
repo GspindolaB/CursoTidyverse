@@ -138,5 +138,5 @@ no_cancelados2 %>%
     summarise(cuenta = n()) %>%
       group_by(dest) %>%
         summarise(carriers = n_distinct(carrier), cuenta, carrier) %>%
-          filter(carriers >= 2)
+          filter(carriers >= 2) %>%
             arrange(desc(cuenta))
