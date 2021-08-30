@@ -43,7 +43,15 @@ diamonds_filter <- diamonds %>%
   filter(carat < 3)
 
 ggplot(data = diamonds_filter) +
-  geom_histogram(mapping = aes(x = carat), binwidth = 0.05)
+  geom_histogram(mapping = aes(x = carat), binwidth = 0.01)
 
 ggplot(data = diamonds_filter) + 
   geom_freqpoly(mapping = aes(x = carat, color = cut), binwidth = 0.1)
+
+### PREGUNTAS ###
+
+# ¿Cuáles son los valores más comunes? ¿Porque?
+# ¿Cuáles son los valores más raros? ¿Porque? ¿Cumple con lo esperado?
+# ¿Vemos algún patrón característico o inusual? ¿Podemos explicarlos?
+
+diamonds
