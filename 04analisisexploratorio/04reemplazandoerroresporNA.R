@@ -50,7 +50,7 @@ good_diamonds_x <- diamantes %>%
   mutate(x = ifelse(x < 3 | x > 10, NA, x))
 
 good_diamonds_y <- diamantes %>%
-  mutate(x = ifelse(y < 3.75 | y > 9.75, NA, y))
+  mutate(y = ifelse(y < 3.75 | y > 9.75, NA, y))
 
 View(good_diamonds_x)
 
