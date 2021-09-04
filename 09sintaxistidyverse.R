@@ -18,3 +18,8 @@ diamonds %>%
     geom_boxplot()
 
 # Entre más simplificado es mucho más recomendable
+
+diamonds %>%
+  count(cut, clarity) %>%
+    ggplot(aes(cut, clarity, fill = n)) +
+      geom_tile()
