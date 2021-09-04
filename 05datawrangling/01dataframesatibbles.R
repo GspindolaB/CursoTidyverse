@@ -1,3 +1,5 @@
+library(tidyverse)
+
 ### DEL DATAFRAME A LAS TIBBLES ###
 
 getwd() # Verificamos cuál es la ruta por defecto del directorio de trabajo
@@ -20,4 +22,8 @@ as_tibble(datos)
 View(iris)
 
 # Convertimos el data frame de iris a tibble y lo guardamos en una variable para que quedé fijo
-iris_tibble <- as_tibble(iris)
+iris_tibble <- as_tibble
+
+iris_tibble
+
+class(iris_tibble)
