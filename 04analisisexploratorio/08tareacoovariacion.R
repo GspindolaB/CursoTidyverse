@@ -150,3 +150,9 @@ diamonds %>%
     summarise(suma = sum(price)) %>%
       ggplot(mapping = aes(x = cut, y = suma, color = suma)) +
         geom_boxplot()
+
+# 12.-
+
+ggplot(data = diamonds) + 
+  geom_point(mapping = aes(x = x, y = y)) + 
+  coord_cartesian(xlim = c(4,12), ylim = c(4,12))
