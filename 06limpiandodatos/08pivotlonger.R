@@ -10,6 +10,8 @@ tidy4a <- table4a %>%
 tidy4b <- table4b %>%
   pivot_longer(c(`1999`,`2000`), names_to = "year", values_to = "population")
 
+77
+
 tidy4a
 tidy4b
 
